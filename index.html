@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+  <div class="wrapper">
+    <form action="">
+      <h1>Login</h1>
+        <div class="input-box">
+            <input type="text" placeholder="Username" required>
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Password" required>
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+        <button type="submit" class="btn">Login</button>
+
+    </form>
+  </div>
+</body>
+</html>
+<script>
+
+  document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const username = document.querySelector('input[type="text"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+
+    try {
+      const res = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+        credentials: 'include' // Wichtig für Cookies
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem('username', username);
+        window.location.href = 'Chathub.html';
+      } else {
+        alert('Login failed: ' + (data.error || 'Invalid credentials'));
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Connection error');
+    }
+  });
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ai ChatHub</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="code-styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css"/>
+    <link rel="icon" href="favicon.ico"/>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+<aside>
+    <button id="new-chat-btn">Neuer Chat ✏️</button>
+    <div class="sidebar-header">
+        <h2>Verlauf</h2>
+        <button id="clear-all-btn" title="Alle Chats löschen">🗑️</button>
+    </div>
+    <ul id="chat-list"></ul>
+    <div class="user-profile">
+        <a href="#">
+            <span class="user-avatar">👤</span>
+            <span id="profile-username">mathieu</span>
+        </a>
+    </div>
+</aside>
+
+<main>
+    <!-- Chatbereich -->
+    <div id="main-content" class="flex flex-col flex-1 min-h-0 h-full hidden">
+        <div id="chat-header">
+            <div class="model-select-container">
+                <select id="model-select"></select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div id="model-info" class="hidden">
+                <span id="current-provider" class="provider-badge"></span>
+            </div>
+        </div>
+        <div id="chat-history"></div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="hidden">
+        <h1><span style="color:#2F81F7;">Ai</span> <span style="color:#00BFAE;">ChatHub</span></h1>
+        <p>Klicke auf "Neuer Chat" in der Seitenleiste, um zu beginnen.</p>
+        <div>
+            <span>✨ Unterstützte AI-Provider:</span>
+            <div class="providers-container" style="margin-top: 16px;">
+                <span class="provider-badge provider-gemini">Gemini</span>
+                <span class="provider-badge provider-openrouter">OpenRouter</span>
+                <span class="provider-badge provider-openai">Openai</span>
+                <span class="provider-badge provider-deepseek">DeepSeek</span>
+                <span class="provider-badge provider-perplexity">Perplexity</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixierte Eingabeleiste -->
+    <div id="chat-form-container">
+        <div id="file-upload-container" class="hidden">
+            <div id="file-upload-area" class="file-upload-area">
+                <i class="fas fa-upload"></i>
+                <p>Dateien hier ablegen oder Klicken zum Auswählen</p>
+                <span>Unterstützt: Bilder, Text, Dokumente (max. 10MB)</span>
+            </div>
+            <div id="file-preview" class="file-preview"></div>
+            <input type="file" id="file-input" multiple class="hidden"/>
+        </div>
+        <form id="chat-form">
+            <button type="button" id="attachment-btn" title="Datei anhängen">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <textarea id="user-input" placeholder="Schreibe deine Nachricht..." rows="1"></textarea>
+            <button type="submit" id="send-button"><i class="fas fa-arrow-up"></i></button>
+        </form>
+    </div>
+</main>
+
+<!-- Modal für Bestätigungen -->
+<div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-message"></p>
+        <div class="modal-actions">
+            <button id="modal-cancel">Abbrechen</button>
+            <button id="modal-confirm">Löschen</button>
+        </div>
+    </div>
+</div>
+
+<script src="copy-code.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

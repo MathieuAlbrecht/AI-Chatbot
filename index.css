@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0D1117;
+    font-family: 'Segoe UI', 'Poppins', 'Arial', sans-serif;
+    color: #C9D1D9;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 420px;
+    background: rgba(22, 27, 34, 0.9);
+    border: 1px solid #30363D;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 38, 45, 0.5);
+    border: 1px solid #30363D;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #C9D1D9;
+    padding: 0 45px 0 15px;
+    transition: all 0.2s;
+}
+
+.input-box input:focus {
+    border-color: #2F81F7;
+    box-shadow: 0 0 0 2px rgba(47, 129, 247, 0.3);
+}
+
+.input-box input::placeholder {
+    color: #8B949E;
+}
+
+.input-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8B949E;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.remember-forgot input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2F81F7;
+}
+
+.remember-forgot a {
+    color: #2F81F7;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #2F81F7;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.wrapper .btn:hover {
+    background: #2563eb;
+}
+
+.wrapper .btn:active {
+    transform: translateY(1px);
+}
+
+.wrapper .register-link {
+    text-align: center;
+    font-size: 14px;
+    margin: 25px 0 10px;
+    color: #8B949E;
+}
+
+.wrapper .register-link p a {
+    color: #2F81F7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    transition: all 0.2s;
+}
+
+.wrapper .register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Anpassungen für den "Don't have an account" Text */
+.wrapper .register-link p {
+    color: #8B949E;
+}
+
+/* Fehlermeldungs-Stil */
+.error-message {
+    color: #f87171;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Passwort-Sichtbarkeit Toggle */
+.password-toggle {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #8B949E;
+    font-size: 18px;
+}

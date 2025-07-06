@@ -1,0 +1,61 @@
+/* Code Block Styling */
+.code-block-wrapper {
+    position: relative;
+    margin: 16px 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-quaternary);
+    border: 1px solid var(--bg-quaternary);
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--bg-quaternary);
+    font-size: 0.85rem;
+}
+
+.code-language {
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.copy-code-btn {
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.copy-code-btn:hover {
+    background: #1a6cdc;
+}
+
+.copy-code-btn.copied {
+    background: var(--accent-green);
+}
+
+.code-block-wrapper pre {
+    margin: 0;
+    padding: 16px;
+    background: var(--bg-quaternary);
+    overflow-x: auto;
+}
+
+.code-block-wrapper pre code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
