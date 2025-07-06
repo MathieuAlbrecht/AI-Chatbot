@@ -6,11 +6,11 @@ Ein Self-Hosted Chat-Interface für verschiedene KI-Modelle mit Benutzerlogin un
 
 Dieses Projekt ist ein Web-basierter "KI-Hub", der es Benutzern ermöglicht, sich anzumelden und mit einer Vielzahl von Large Language Models (LLMs) verschiedener Anbieter zu interagieren. Die Chats werden lokal im Browser gespeichert. Die Anwendung verfügt über eine Server-Komponente, die API-Anfragen an die KI-Provider weiterleitet und Datei-Uploads verwaltet.
 
-Die Oberfläche ist mit HTML, CSS und Vanilla JavaScript erstellt. Das Backend läuft auf Node.js mit Express.
+Die Oberfläche ist mit HTML, CSS und JavaScript erstellt. Das Backend läuft auf Node.js.
 
 ## Features
 
--   **Benutzer-Login:** Einfacher Login über `server/users.json` (primär für Testzwecke).
+-   **Benutzer-Login:** Einfacher Login über `server/users.json`.
 -   **Multi-KI-Unterstützung:** Zugriff auf Modelle von Google (Gemini), Anthropic (Claude), OpenRouter, Perplexity, DeepSeek und OpenAI.
 -   **Modellauswahl:** Dropdown zur Auswahl des gewünschten KI-Modells.
 -   **Chat-Speicherung:** Konversationen werden im `localStorage` des Browsers gesichert.
@@ -18,7 +18,6 @@ Die Oberfläche ist mit HTML, CSS und Vanilla JavaScript erstellt. Das Backend l
 -   **Markdown-Anzeige:** Chatnachrichten unterstützen Markdown-Formatierung.
 -   **Code-Highlighting:** Codeblöcke werden mit `highlight.js` formatiert.
 -   **Server-Side API-Key Management:** API-Schlüssel werden sicher serverseitig in einer `.env`-Datei verwaltet.
--   **Lokaler Betrieb:** Alles läuft auf deinem eigenen Server/Rechner.
 
 ## Voraussetzungen
 
@@ -26,41 +25,6 @@ Die Oberfläche ist mit HTML, CSS und Vanilla JavaScript erstellt. Das Backend l
 -   npm (kommt mit Node.js)
 -   API-Schlüssel für die gewünschten KI-Provider.
 
-## Installation & Start
-
-1.  **Repository klonen:**
-    ```bash
-    git clone <repository-url>
-    cd <repository-name>
-    ```
-
-2.  **Server-Abhängigkeiten installieren:**
-    ```bash
-    cd server
-    npm install
-    ```
-
-3.  **Benutzer anlegen (optional):**
-    Passe `server/users.json` an:
-    ```json
-    [
-      { "username": "deinBenutzername", "password": "deinPasswort" }
-    ]
-    ```
-
-4.  **API-Schlüssel konfigurieren:**
-    Erstelle `server/.env` gemäß den Anweisungen im Abschnitt "API-Schlüssel (`server/.env`)".
-
-5.  **Server starten:**
-    Im `server`-Verzeichnis:
-    ```bash
-    npm start
-    ```
-    Oder für Entwicklung:
-    ```bash
-    npm run dev
-    ```
-    Die Anwendung ist dann unter `http://localhost:3000` erreichbar.
 
 ## API-Schlüssel (`server/.env`)
 
